@@ -18,6 +18,12 @@ Airport.create!([{
   name: 'LaGuardia Airport',
   city: 'East Elmhusrt',
   state: 'New York'
+},
+{
+  code: 'LAX',
+  name: 'Los Angeles International Airport',
+  city: 'Los Angeles',
+  state: 'California'
 }])
 
 p "Created #{Airports.count} Airports"
