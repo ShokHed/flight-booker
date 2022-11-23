@@ -25,5 +25,27 @@ Airport.create!([{
   city: 'Los Angeles',
   state: 'California'
 }])
-
 p "Created #{Airport.count} Airports"
+
+Flight.destroy_all
+
+Flight.create!([{
+  departure_airport_id: 1,
+  arrival_airport_id: 2,
+  start: '2023-01-01 6:01:00',
+  flight_duration: 495
+},
+{
+  departure_airport_id: 2,
+  arrival_airport_id: 1,
+  start: '2023-01-01 6:35:00',
+  flight_duration: 495
+},
+{
+  departure_airport_id: 1,
+  arrival_airport_id: 3,
+  start: '2023-01-01 6:16:00',
+  flight_duration: 175
+}])
+
+p "Created #{Flight.count} Flights"
