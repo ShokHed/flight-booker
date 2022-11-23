@@ -26,4 +26,4 @@ Airport.create!([{
   state: 'California'
 }])
 
-p "Created #{Airports.count} Airports"
+p "Created #{Airport.count} Airports"
