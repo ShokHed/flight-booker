@@ -30,20 +30,20 @@ p "Created #{Airport.count} Airports"
 Flight.destroy_all
 
 Flight.create!([{
-  departure_airport_id: 1,
-  arrival_airport_id: 2,
+  departure_id: 1,
+  arrival_id: 2,
   start: '2023-01-01 6:01:00',
   duration: 495
 },
 {
-  departure_airport_id: 2,
-  arrival_airport_id: 1,
+  departure_id: 2,
+  arrival_id: 1,
   start: '2023-01-01 6:35:00',
   duration: 495
 },
 {
-  departure_airport_id: 1,
-  arrival_airport_id: 3,
+  departure_id: 1,
+  arrival_id: 3,
   start: '2023-01-01 6:16:00',
   duration: 175
 }])
