@@ -24,14 +24,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_24_021708) do
   end
 
   create_table "flights", force: :cascade do |t|
-    t.integer "departure_id"
-    t.integer "arrival_id"
+    t.integer "origin_id"
+    t.integer "destination_id"
     t.datetime "start"
     t.integer "duration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "flights", "airports", column: "arrival_id"
-  add_foreign_key "flights", "airports", column: "departure_id"
+  add_foreign_key "flights", "airports", column: "destination_id"
+  add_foreign_key "flights", "airports", column: "origin_id"
 end
