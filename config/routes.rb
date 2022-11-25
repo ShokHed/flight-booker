@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root 'flights#index'
+
+  #restrict to used methods
+  resources :flights
 end
