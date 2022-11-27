@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 # Flight.destroy_all
+Flight.destroy_all
 Airport.destroy_all
 
 
@@ -32,24 +33,24 @@ Airport.create!([{
 }])
 p "Created #{Airport.count} Airports"
 
-Flight.destroy_all
+# Flight.destroy_all
 
 Flight.create!([{
   origin_id: 1,
   destination_id: 2,
-  start: '2023-01-01 6:01:00',
+  start: DateTime.parse('2023-01-01 6:01:00'),
   duration: 495
 },
 {
   origin_id: 2,
   destination_id: 1,
-  start: '2023-01-01 6:35:00',
+  start: DateTime.parse('2023-01-01 6:35:00'),
   duration: 495
 },
 {
   origin_id: 1,
   destination_id: 3,
-  start: '2023-01-01 6:16:00',
+  start: DateTime.parse('2023-01-01 6:16:00'),
   duration: 175
 }])
 
