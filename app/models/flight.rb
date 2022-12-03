@@ -11,7 +11,7 @@ class Flight < ApplicationRecord
   end
 
   def search_results_display
-    "#{origin.code} -> #{desination.code}, #{search_results_datetime}"
+    "#{origin.code} -> #{destination.code}, #{search_results_datetime}"
   end
 
   scope :today_or_after, -> { where('start > ?', DateTime.now) }
