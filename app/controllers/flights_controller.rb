@@ -1,15 +1,23 @@
 class FlightsController < ApplicationController
   def index
     @airports = Airport.all
+    
+    # Want distinct dates. Despite only date being displayed due to formatting
+    # it is still a DateTime object and thus different occurances of same date
+    # are distinct
     @flight_dates = Flight.today_or_after.distinct
 
-    @search_results = Flight.join(:origin, :destination).where(origin: { origin_id: params[:origin] },
-                                  destination: { desination_id: params[:desination] }).where( date: params[:flight_date])
+    # @search_results = Flight.joins(:origin, :destination).where(origin: { origin_id: params[:origin] },
+    #                               destination: { desination_id: params[:desination] }).where( date: params[:flight_date])
+  
+    @search_results = Flight.where("origin_id = ?", params[:origin]).
+                      where("destination_id = ?", params[:destination])
+                      # .where( date: params[:flight_date])
   end
 
   private
 
   def flight_params
-    params.require(:flight).permit(:origin_id, :destination_id, :flight_date)
+    params.require(:flight).permit(:origin_id, :destination_id, :flight_date, :number_of_passengers, :selected_flight)
   end
 end
