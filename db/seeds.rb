@@ -42,9 +42,21 @@ Flight.create!([{
   duration: 495
 },
 {
+  origin_id: 1,
+  destination_id: 2,
+  start: DateTime.parse('2023-01-01 13:11:11'),
+  duration: 495
+},
+{
   origin_id: 2,
   destination_id: 1,
   start: DateTime.parse('2023-01-01 6:35:00'),
+  duration: 495
+},
+{
+  origin_id: 2,
+  destination_id: 1,
+  start: DateTime.parse('2023-01-01 23:09:12'),
   duration: 495
 },
 {
@@ -52,6 +64,12 @@ Flight.create!([{
   destination_id: 3,
   start: DateTime.parse('2023-01-01 6:16:00'),
   duration: 175
+},
+{
+  origin_id: 1,
+  destination_id: 3,
+  start: DateTime.parse('2023-01-01 15:54:32'),
+  duration: 495
 }])
 
 p "Created #{Flight.count} Flights"
