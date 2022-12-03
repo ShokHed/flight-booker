@@ -7,3 +7,7 @@ Flight booker web app for The Odin Project open source web dev curriculum https:
 * Rails version: 7.0.4
 
 * ...
+
+* To-Do
+  -flight search date
+    -DateTime->Date
