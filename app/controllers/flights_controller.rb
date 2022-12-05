@@ -13,6 +13,8 @@ class FlightsController < ApplicationController
     @search_results = Flight.where("origin_id = ?", params[:origin]).
                       where("destination_id = ?", params[:destination])
                       # .where( date: params[:flight_date])
+
+    @number_of_passengers = params[number_of_passengers]
   end
 
   private
