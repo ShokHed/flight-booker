@@ -12,6 +12,12 @@ Flight booker web app for The Odin Project open source web dev curriculum https:
   -flight search date
     -DateTime->Date
   -next step
-    -add hidden field for # passengers
     -create bookings/relations
+      -booking
+        -flight_id (foreign key)
+        -person_id
+      -person
+        -name, email
+        -has one flight thru booking
+        -Flight has many passengers thru booking class:person
     -submit _results to booking#new
