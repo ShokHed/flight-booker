@@ -8,7 +8,8 @@
 # Flight.destroy_all
 Flight.destroy_all
 Airport.destroy_all
-
+Person.destroy_all
+Booking.destroy_all
 
 
 # Airport.destroy_all
@@ -73,3 +74,17 @@ Flight.create!([{
 }])
 
 p "Created #{Flight.count} Flights"
+
+Person.create([{
+  name: 'Tom Brady',
+  email: 'tomB@email.com'
+}])
+
+p "Created #{Person.count} People"
+
+Booking.create([{
+  passenger_id: 1,
+  flight_id: 1
+}])
+
+p "Create #{Booking.count} Bookings"
