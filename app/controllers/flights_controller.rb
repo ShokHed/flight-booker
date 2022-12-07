@@ -10,11 +10,11 @@ class FlightsController < ApplicationController
     # @search_results = Flight.joins(:origin, :destination).where(origin: { origin_id: params[:origin] },
     #                               destination: { desination_id: params[:desination] }).where( date: params[:flight_date])
   
-    @search_results = Flight.where("origin_id = ?", params[:origin]).
-                      where("destination_id = ?", params[:destination])
+    @search_results = Flight.where('origin_id = ?', params[:origin])
+                      .where('destination_id = ?', params[:destination])
                       # .where( date: params[:flight_date])
 
-    @number_of_passengers = params[number_of_passengers]
+    @number_of_passengers = params[:number_of_passengers]
   end
 
   private
