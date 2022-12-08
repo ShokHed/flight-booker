@@ -2,7 +2,7 @@ class Flight < ApplicationRecord
   belongs_to :origin, foreign_key: :origin_id, class_name: 'Airport'#, inverse_of: :arrivals
   belongs_to :destination, foreign_key: :destination_id, class_name: 'Airport'#, inverse_of: :departures
   has_many :bookings
-  has_many :passengers, through: :bookings, class_name: 'Person'
+  has_many :passengers, through: :bookings
 
   def flight_start_display
     start.strftime("%m/%d/%Y")

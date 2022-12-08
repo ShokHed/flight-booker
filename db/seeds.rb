@@ -8,11 +8,8 @@
 # Flight.destroy_all
 Flight.destroy_all
 Airport.destroy_all
-Person.destroy_all
+Passenger.destroy_all
 Booking.destroy_all
-
-
-# Airport.destroy_all
 
 Airport.create!([{
   code: 'SEA',
@@ -33,8 +30,6 @@ Airport.create!([{
   state: 'California'
 }])
 p "Created #{Airport.count} Airports"
-
-# Flight.destroy_all
 
 Flight.create!([{
   origin_id: 1,
@@ -75,12 +70,12 @@ Flight.create!([{
 
 p "Created #{Flight.count} Flights"
 
-Person.create([{
+Passenger.create([{
   name: 'Tom Brady',
   email: 'tomB@email.com'
 }])
 
-p "Created #{Person.count} People"
+p "Created #{Passenger.count} Passengers"
 
 Booking.create([{
   passenger_id: 1,
