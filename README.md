@@ -11,6 +11,8 @@ Flight booker web app for The Odin Project open source web dev curriculum https:
 * Improvement To-Do:
   - implement simple form gem for form styling
   - implement styling using latest version of Bootsrap
+  - add validations to models
+  - restrict routes to relevant actions
 
 * To-Do
   -flight search date
