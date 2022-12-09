@@ -12,7 +12,7 @@ Flight booker web app for The Odin Project open source web dev curriculum https:
   - implement simple form gem for form styling
   - implement styling using latest version of Bootsrap
   - add validations to models
-  - restrict routes to relevant actions
+  - check strong params, make sure there aren't extras
   - routing: hide params in URL
 
 * To-Do
