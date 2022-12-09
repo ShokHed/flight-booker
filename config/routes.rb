@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   root 'flights#index'
 
   #restrict to used methods
-  resources :flights
+  resources :flights, only: [:index]
+
+  resources :bookings, only: [:new]
 end
