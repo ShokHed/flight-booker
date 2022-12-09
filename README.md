@@ -13,6 +13,7 @@ Flight booker web app for The Odin Project open source web dev curriculum https:
   - implement styling using latest version of Bootsrap
   - add validations to models
   - restrict routes to relevant actions
+  - routing: hide params in URL
 
 * To-Do
   -flight search date
