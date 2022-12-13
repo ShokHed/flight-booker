@@ -21,7 +21,6 @@ class FlightsController < ApplicationController
     @search_results = Flight.where('origin_id = ?', params[:origin])
                       .where('destination_id = ?', params[:destination])
                       .where( 'start::date = ?', params[:flight_date].to_date)
-                      # .where( start: params[:flight_date])
 
     @number_of_passengers = params[:number_of_passengers]
   end
