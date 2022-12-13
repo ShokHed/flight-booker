@@ -16,6 +16,9 @@ Flight booker web app for The Odin Project open source web dev curriculum https:
   - routing: hide params in URL
 
 * To-Do
+  -flight date now returns distinct days where there are flights
+    -search_results must now select where(start = flight_date), currently not returning anything
+
   -flight search date
     -DateTime->Date
   -next step

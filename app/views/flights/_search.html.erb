@@ -16,7 +16,9 @@
   </div>
    <div>
     <%= f.label :flight_date %>
-    <%= f.collection_select :flight_date, @flight_dates, :start, :flight_start_display, prompt: 'Select flight date', required: true %>
+    <%# <%= f.collection_select :flight_date, @flight_dates, :start, flight_start_display, prompt: 'Select flight date', required: true %> %>
+    <%= f.select :flight_date, @flight_dates.map { |d| d.strftime("%F") }, prompt: 'Select flight date' %>
+
   </div>
   <div>
     <%= f.submit value:'Search', class: 'btn btn-primary' %>

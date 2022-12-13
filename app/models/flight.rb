@@ -16,5 +16,5 @@ class Flight < ApplicationRecord
     "#{origin.code} -> #{destination.code}, #{search_results_datetime}"
   end
 
-  scope :today_or_after, -> { where('start > ?', DateTime.now) }
+  scope :today_or_after, -> { where('start::date > ?', Date.today).distinct }
 end
