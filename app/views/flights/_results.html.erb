@@ -1,6 +1,6 @@
 <div id="search_results">
   <br><br>
-  <%= form_with url: '/flights', method: :get  do |f| %>
+  <%= form_with url: '/bookings', method: :get  do |f| %>
     <% if @search_results %>
       <h4>Results:</h4>
       <%= f.collection_radio_buttons(:flight_id, @search_results, :id, :search_results_display) do |r| %>
