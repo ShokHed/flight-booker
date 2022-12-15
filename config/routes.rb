@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   #restrict to used methods
   resources :flights, only: [:index]
 
-  resources :bookings, only: [:new]
+  resources :bookings, only: [:new, :view]
 end
