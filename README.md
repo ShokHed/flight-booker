@@ -10,6 +10,7 @@ Flight booker web app for The Odin Project open source web dev curriculum https:
 
 * Improvement To-Do:
   - implement simple form gem for form styling
+    -already installed, re-install w/ bootstrap option
   - implement styling using latest version of Bootsrap
   - add validations to models
   - check strong params, make sure there aren't extras
