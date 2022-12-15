@@ -19,4 +19,6 @@ Flight booker web app for The Odin Project open source web dev curriculum https:
   -IF NESTED FORM FAILS ADD INVERSE_OF
     - https://thoughtbot.com/blog/accepts-nested-attributes-for-with-has-many-through
 
-  -submit _results to booking#new
+  -submit _results to booking#new (flight_id, # of passengers)
+  -create booking
+  -create nested passengers
