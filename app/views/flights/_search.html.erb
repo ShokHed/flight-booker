@@ -4,20 +4,20 @@
 
   <div>
     <%= f.label :origin %>
-    <%= f.collection_select :origin, @airports, :id, :name_city_state, prompt: 'Select origin airport', required: true %>
+    <%= f.collection_select( :origin, @airports, :id, :name_city_state, { prompt: 'Select origin airport' }, { required: true }) %>
   </div>
   <div>
     <%= f.label :destination %>
-    <%= f.collection_select :destination, @airports, :id, :name_city_state, prompt: 'Select desination airport', required: true %>
+    <%= f.collection_select :destination, @airports, :id, :name_city_state, { prompt: 'Select desination airport' }, { required: true } %>
   </div>
   <div>
     <%= f.label :number_of_passengers %>
-    <%= f.collection_select :number_of_passengers, (1..4), :itself, :to_s, prompt: 'Select number of tickets', required: true %>
+    <%= f.collection_select :number_of_passengers, (1..4), :itself, :to_s, { prompt: 'Select number of tickets' }, { required: true } %>
   </div>
    <div>
     <%= f.label :flight_date %>
     <%# <%= f.collection_select :flight_date, @flight_dates, :start, flight_start_display, prompt: 'Select flight date', required: true %> %>
-    <%= f.select :flight_date, @flight_dates.map { |d| d.strftime("%F") }, prompt: 'Select flight date' %>
+    <%= f.select :flight_date, @flight_dates.map { |d| d.strftime("%F") }, { prompt: 'Select flight date' }, { required: true } %>
 
   </div>
   <div>
