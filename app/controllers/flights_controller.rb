@@ -2,25 +2,17 @@ class FlightsController < ApplicationController
   def index
     @airports = Airport.all
 
-    # Want distinct dates. Despite only date being displayed due to formatting
-    # it is still a DateTime object and thus different occurances of same date
-    # are distinct
-    # @flight_dates = Flight.today_or_after.distinct
-
-    # @flight_dates = Flight.today_or_after
-    # @flight_dates = @flight_dates.start.map(&:to_date).distinct
-
-    # @flight_dates = Flight.all.collect(&:start).sort.uniq
-    @flight_dates = Flight.all.collect(&:start).map { |d| d.to_date }.sort.uniq
-
-    # @search_results = Flight.joins(:origin, :destination).where(origin: { origin_id: params[:origin] },
-    #                               destination: { desination_id: params[:desination] }).where( date: params[:flight_date])
-
+    # @flight_dates = Flight.all.today_or_after.collect(&:start).map { |d| d.to_date }.sort.uniq
+    @flight_dates = Flight.all.today_or_after.collect(&:start).map(&:to_date).sort.uniq
 
     # Does join make query faster?
-    @search_results = Flight.where('origin_id = ?', params[:origin])
-                      .where('destination_id = ?', params[:destination])
-                      .where( 'start::date = ?', params[:flight_date].to_date)
+    if params[:origin].nil? || params[:destination].nil? || params[:flight_date].nil?
+      @search_results = nil
+    else
+      @search_results = Flight.where('origin_id = ?', params[:origin])
+                              .where('destination_id = ?', params[:destination])
+                              .where('start::date = ?', params[:flight_date].to_date)
+    end
 
     @number_of_passengers = params[:number_of_passengers]
   end
