@@ -9,12 +9,12 @@ class Flight < ApplicationRecord
   end
 
   def search_results_datetime
-    start.strftime("%m/%d/%Y %H:%M")
+    start.strftime("%F %H:%M")
   end
 
   def search_results_display
     "#{origin.code} -> #{destination.code}, #{search_results_datetime}"
   end
 
-  scope :today_or_after, -> { where('start::date > ?', Date.today).distinct }
+  scope :today_or_after, -> { where('start::date >= ?', Date.today).distinct }
 end
