@@ -72,6 +72,9 @@ p "Created #{Flight.count} Flights"
 
 Booking.create([{
   flight_id: 1
+},
+{
+  flight_id: 2
 }])
 
 p "Create #{Booking.count} Bookings"
@@ -80,6 +83,16 @@ Passenger.create([{
   name: 'Tom Brady',
   email: 'tomB@email.com',
   booking_id: 1
+},
+{
+  name: 'Jan Carlson',
+  email: 'janC@email.com',
+  booking_id: 1
+},
+{
+  name: 'Matt Thompson',
+  email: 'mattT@email.com',
+  booking_id: 2
 }])
 
 p "Created #{Passenger.count} Passengers"

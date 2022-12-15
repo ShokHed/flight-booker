@@ -24,7 +24,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_033642) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.bigint "passenger_id"
     t.bigint "flight_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -42,12 +41,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_033642) do
   create_table "passengers", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.bigint "booking_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_foreign_key "bookings", "flights"
-  add_foreign_key "bookings", "passengers"
   add_foreign_key "flights", "airports", column: "destination_id"
   add_foreign_key "flights", "airports", column: "origin_id"
+  add_foreign_key "passengers", "bookings"
 end
