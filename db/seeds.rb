@@ -70,16 +70,17 @@ Flight.create!([{
 
 p "Created #{Flight.count} Flights"
 
-Passenger.create([{
-  name: 'Tom Brady',
-  email: 'tomB@email.com'
-}])
-
-p "Created #{Passenger.count} Passengers"
-
 Booking.create([{
   passenger_id: 1,
   flight_id: 1
 }])
 
 p "Create #{Booking.count} Bookings"
+
+Passenger.create([{
+  name: 'Tom Brady',
+  email: 'tomB@email.com',
+  booking_id: 1
+}])
+
+p "Created #{Passenger.count} Passengers"
