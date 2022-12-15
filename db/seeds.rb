@@ -71,7 +71,6 @@ Flight.create!([{
 p "Created #{Flight.count} Flights"
 
 Booking.create([{
-  passenger_id: 1,
   flight_id: 1
 }])
 
