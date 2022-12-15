@@ -16,4 +16,7 @@ Flight booker web app for The Odin Project open source web dev curriculum https:
   - routing: hide params in URL
 
 * To-Do
-    -submit _results to booking#new
+  -IF NESTED FORM FAILS ADD INVERSE_OF
+    - https://thoughtbot.com/blog/accepts-nested-attributes-for-with-has-many-through
+
+  -submit _results to booking#new
