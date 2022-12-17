@@ -3,6 +3,6 @@ class Booking < ApplicationRecord
   has_many :passengers # , foreign_key: 'passenger_id'
 
   # accepts_nested_attributes_for :relationship, reject_if: ->(attributes){ attributes['name'].blank? }, allow_destroy: true
-  accepts_nested_attributes_for :passengers, allow_destroy: true
+  accepts_nested_attributes_for :passengers, allow_destroy: true, reject_if: :all_blank
 
 end
