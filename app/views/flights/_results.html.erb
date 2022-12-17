@@ -1,6 +1,6 @@
 <div id="search_results">
   <br><br>
-  <%= form_with url: '/bookings', method: :get  do |f| %>
+  <%= form_with url: bookings_path, method: :get  do |f| %>
     <% if @search_results %>
       <h4>Results:</h4>
       <%= f.collection_radio_buttons(:flight_id, @search_results, :id, :search_results_display) do |r| %>
@@ -11,6 +11,6 @@
       <p>'Select search parameters'</p>
     <% end %>
     <%= f.hidden_field :number_of_passengers, value: @number_of_passengers %>
-    <%= form.submit class: 'btn btn-primary' %>
+    <%= f.submit value: 'Book', class: 'btn btn-primary' %>
   <% end %>
 </div>
