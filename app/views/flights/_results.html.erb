@@ -4,11 +4,13 @@
     <% if @search_results %>
       <h4>Results:</h4>
       <%= f.collection_radio_buttons(:flight_id, @search_results, :id, :search_results_display) do |r| %>
-        <%= r.label  { r.radio_button + r.text } %> <br>
+        <%= r.label  { r.radio_button + r.text } %>
+        <br>
       <% end %>
     <% else %>
       <p>'Select search parameters'</p>
     <% end %>
     <%= f.hidden_field :number_of_passengers, value: @number_of_passengers %>
+    <%= form.submit class: 'btn btn-primary' %>
   <% end %>
 </div>
