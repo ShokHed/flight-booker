@@ -22,4 +22,7 @@ Flight booker web app for The Odin Project open source web dev curriculum https:
 
   -submit _results to booking#new (flight_id, # of passengers)
   -create booking
-  -create nested passengers
+    -create # nested passengers
+    -params from _results (#_passengers, flight_id)
+
+-fields_for nested passengers
