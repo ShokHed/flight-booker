@@ -9,8 +9,6 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       if @booking.save
-
-        # format.html { redirect_to post_url(@post), notice: "Post successfully created." }
         format.html { redirect_to bookings_path(@booking), notice: "Booking successfully created." }
         format.json { render :show, status: :created, location: @booking }
       else
