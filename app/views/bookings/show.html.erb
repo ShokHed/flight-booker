@@ -1,0 +1,27 @@
+<h3>Booking info:</h3>
+
+<div>
+    <strong>Origin Airport: </strong>
+    <%= @booking.flight.origin.name %>
+</div>
+
+<div>
+    <strong>Destination Airport: </strong>
+    <%= @booking.flight.destination.name %>
+</div>
+
+<div>
+    <strong>Flight departure: </strong>
+    <%= @booking.flight.search_results_datetime %>
+</div>
+
+<div>
+    <strong>Passengers: </strong>
+    <% @booking.passengers.each do |p| %>
+        <br><%= "Name: #{p.name}, Email: #{p.email}" %> 
+    <% end %>
+</div>
+
+<br>
+
+<%= link_to "Back to flight search", root_path %>
