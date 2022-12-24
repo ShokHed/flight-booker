@@ -1,26 +1,2 @@
-<%= form_with model: @booking do |f| %>
-  <% if @booking.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this event from being saved:</h2>
-      <ul>
-        <% @booking.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <%= f.hidden_field :number_of_passengers, value: params[:number_of_passengers] %>
-  <%= f.hidden_field :flight_id, value: params[:flight_id] %>
-
-  <%= f.fields_for :passengers do |passengers_form| %>
-    <li>
-      <%= passengers_form.label :name %>
-      <%= passengers_form.text_field :name, { required: true } %>
-
-      <%= passengers_form.label :email %>
-      <%= passengers_form.text_field :email, { required: true } %>
-    </li>
-  <% end %>
-  <%= f.submit value: 'Submit', class: 'btn btn-primary' %>
-<% end %>
+<%= render "simple_form", booking: @booking %>
