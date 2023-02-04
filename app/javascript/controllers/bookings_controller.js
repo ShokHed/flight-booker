@@ -11,8 +11,6 @@ export default class extends Controller {
     console.log(`event.target.id=${event.target.id}`)
     const passengerToRemove = document.getElementById(`passenger_${event.target.id}`)
     passengerToRemove.remove()
-    // this.passengerCountValue--
-    // this.updateNumberOfPassengers()
   }
 
   addPassenger() {
