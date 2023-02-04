@@ -1,8 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = [ "input","output" ]
-  static classes = [ "overLimit" ]
   static values = { passengerCount: Number }
   
     connect() {
@@ -13,14 +11,14 @@ export default class extends Controller {
     console.log(`event.target.id=${event.target.id}`)
     const passengerToRemove = document.getElementById(`passenger_${event.target.id}`)
     passengerToRemove.remove()
-    this.passengerCountValue--
-    this.updateNumberOfPassengers()
+    // this.passengerCountValue--
+    // this.updateNumberOfPassengers()
   }
 
   addPassenger() {
-    const lastPassenger = document.getElementById(`passenger_${this.passengerCountValue - 1}`)
+    const passengers = document.getElementById('passengers')
+    passengers.appendChild(passenger_fields.content.cloneNode(true))
 
-    lastPassenger.after(passenger_fields.content.cloneNode(true))
     this.passengerCountValue++
     
     this.setPassengerAttributeIndexes()

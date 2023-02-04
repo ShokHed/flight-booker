@@ -3,16 +3,17 @@
     <%= f.hidden_field :number_of_passengers, value: params[:number_of_passengers] %>
     <%= f.hidden_field :flight_id, value: params[:flight_id] %>
     
-    <%= f.simple_fields_for :passengers do |p| %>
-      <div id=<%= "passenger_#{p.index}" %> >
-        <%= p.input :name %>
-        <%= p.input :email %>
+    <div id='passengers'>
+      <%= f.simple_fields_for :passengers do |p| %>
+        <div id=<%= "passenger_#{p.index}" %> >
+          <%= p.input :name %>
+          <%= p.input :email %>
 
-        <button id=<%= "#{p.index}" %> data-action='bookings#removePassenger' type="button" >Remove</button>
-        <br><br>
-      </div>
-    <% end %>
-
+          <button id=<%= "#{p.index}" %> data-action='bookings#removePassenger' type="button" >Remove</button>
+          <br><br>
+        </div>
+      <% end %>
+    </div>
 
     <button type="button" data-action='bookings#addPassenger'>Add</button>
     <br><br>
