@@ -1,18 +1,46 @@
-<%= simple_form_for booking do |f| %>
+<div data-controller='bookings' data-bookings-passenger-count-value=<%= params[:number_of_passengers] %> >
+  <%= simple_form_for booking do |f| %>
     <%= f.hidden_field :number_of_passengers, value: params[:number_of_passengers] %>
     <%= f.hidden_field :flight_id, value: params[:flight_id] %>
     
     <%= f.simple_fields_for :passengers do |p| %>
-      <div id=<%= "#{p.index}" %> >
+      <div id=<%= "passenger_#{p.index}" %> >
         <%= p.input :name %>
         <%= p.input :email %>
 
-          <button type="button">Remove</button>
+        <button id=<%= "#{p.index}" %> data-action='bookings#removePassenger' type="button" >Remove</button>
         <br><br>
       </div>
     <% end %>
 
-    <button type="button">Add</button>
+
+    <button type="button" data-action='bookings#addPassenger'>Add</button>
     <br><br>
+
     <%= f.submit "Submit" %>
-<% end %>
+  <% end %>
+
+
+
+  <template id='passenger_fields'>
+    <div id="passenger_new">
+      <div class="input string required booking_passengers_name">
+        <label class="string required" for="booking_passengers_attributes_0_name">
+          <abbr title="required">*</abbr> Name
+        </label>
+        <input class="string required" type="text" name="booking[passengers_attributes][0][name]" id="booking_passengers_attributes_0_name">
+      </div>
+
+      <div class="input email required booking_passengers_email">
+        <label class="email required" for="booking_passengers_attributes_0_email">
+          <abbr title="required">*</abbr> Email
+        </label>
+        <input class="string email required" type="email" name="booking[passengers_attributes][0][email]" id="booking_passengers_attributes_0_email">
+      </div>
+
+      <button id="new" data-action="bookings#removePassenger" type="button">Remove</button>
+      <br><br>
+    </div>
+  </template>
+
+</div>
