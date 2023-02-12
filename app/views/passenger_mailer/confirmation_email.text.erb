@@ -2,8 +2,6 @@ Thank you for booking a flight, <%= @passenger.name %>!
 ===============================================
 
 You have successfully booked a trip with MyCoolTix.com,
-      to view your booking please visit <%= @url %>.
-
-To login to the site, just follow this link: <%= @url %>.
+      to view your booking please visit <%= booking_url(@passenger.booking, host: 'localhost:3000') %>.
 
 Thanks for booking with MyCoolTix.com, and have a great day!

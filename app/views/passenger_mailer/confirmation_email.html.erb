@@ -7,7 +7,7 @@
     <h1>Thank you for booking a flight, <%= @passenger.name %>!</h1>
     <p>
       You have successfully booked a trip with MyCoolTix.com,
-      to view your booking please visit <%= @url %>.<br>
+      to view your booking please visit <a href=<%= booking_url(@passenger.booking, host: 'localhost:3000') %> >this link</a>.<br>
     </p>
     <p>Thanks for booking with MyCoolTix.com, and have a great day!</p>
   </body>
