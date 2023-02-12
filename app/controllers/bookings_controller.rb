@@ -2,7 +2,6 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     params[:number_of_passengers].to_i.times { @booking.passengers.build }
-    # @passengers = params[:number_of_passengers].to_i.times { @booking.passengers.build }
   end
 
   def create
@@ -10,10 +9,11 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       if @booking.save
-        # PassengerMailer.with(passengers: @booking.passengers).confirmation_email.deliver_now
-        @booking.passengers.each { |passenger| PassengerMailer.with(passenger: passenger).confirmation_email.deliver_now }
-        
-        format.html { redirect_to booking_path(@booking), notice: "#{@booking.passengers.count} #{'booking'.pluralize(@booking.passengers.count)} successfully created." }
+        @booking.passengers.each { |passenger| PassengerMailer.with(
+                                    passenger: passenger).confirmation_email.deliver_now }
+        format.html { redirect_to booking_path(@booking), 
+                      notice: "Booking with #{@booking.passengers.count} 
+                      #{'passenger'.pluralize(@booking.passengers.count)} successfully created." }
         format.json { render :show, status: :created, location: @booking }
       else
         format.html { render :new, status: :unprocessable_entity }
